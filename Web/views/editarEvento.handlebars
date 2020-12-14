@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="tamPaginas">
+    <div class="container box-login">
+          <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Editar Evento!</h5>
+                <form action="/eventoEditado" method="POST" class="form-signin">
+                  <div class="form-label-group">
+
+                    <input type="hidden" name="id" value="{{eventos._id}}" >
+                    <input type="text" name="nomeEvento" id="inputNome" class="form-control" placeholder="Nome do Evento" value="{{eventos.nome}}"  required autofocus>  
+                    <label for="inputNome">Nome do Evento</label>
+                  
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="text" name="localEvento" id="inputLocal" class="form-control" placeholder="Local do Evento" value="{{eventos.local}}" required autofocus>  
+                    <label for="inputLocal">Local do Evento</label>
+                  
+                  </div>
+
+                  <div class="form-label-group">
+                    <input value="{{eventos.data}}"type="date" name="dataEvento" id="inputData" class="form-control" placeholder="Data do Evento" required autofocus>  
+                    <label for="inputData">Data</label>
+                  
+                  </div>
+
+                <div class="form-label-group">
+                    <input value="{{eventos.horario}}" type="time" name="horaEvento" id="inputHora" class="form-control" placeholder="Hora do Evento" required autofocus>  
+                    <label for="inputHora">Horário</label>
+                  
+                  </div>
+
+                  
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Editar Evento</button>
+                  <hr class="my-4">
+                  <a href="/buscarEvento">Buscar Evento</a>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+    
+  </div>
+</div>

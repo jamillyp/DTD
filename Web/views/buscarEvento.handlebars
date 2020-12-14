@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="tamPaginas">
+       <div class="container box-login">
+        <div class="row">
+            <div class="col-sm-9  mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Qual evento você está procurando?</h5>
+                        <form action="/buscarEvento" class="form-inline form-signin" method="POST">
+                            <div class="form-label-group form-group mb-2">
+                                <input name="nomeEvento" type="text" id="inputNomeEvento" class="form-control" placeholder="Nome do Evento" required autofocus>
+                                <label for="inputNomeEvento">Nome do Evento</label>
+                            </div>
+                                <div class="form-label-group form-group  mx-sm-3 mb-2">
+                                <label for="inputDate" class="sr-only">Data</label>
+                            <input type="date" class="form-control" id="inputDate" placeholder="Data">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2  btn-lg text-uppercase">Procurar</button>
+                        </form>
+                    </div>            
+                </div>
+            </div>   
+        </div>
+    {{#each evento}}
+    <h1>{{this.nome}}</h1>
+    {{else}}
+    {{/each}}
+    {{#each eventos}}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                        <h5><b>Evento: </b> {{this.nome}}</h5>  
+                        <span><b>Local: </b>{{this.local}}</span> 
+                        <span><b>Data: </b>{{this.data}}</span>
+                        <span><b>Horário: </b> {{this.horario}}</span>
+                    </div>
+                    <div class="col-4">
+                        <a href="/editarEvento{{_id}}"><button class="btn  btn-success">Editar</button></a>
+                        <a href="/deletarEvento{{_id}}"><button class="btn btn-danger">Excluir</button></a>
+                        <form classe="d.flex form-inline mt-2" action="" method="POST">
+                            <input type="hidden" name="id" value="{{_id}}">
+                        </form>
+                    </div>                        
+                 </div>     
+            </div>
+        </div>
+        {{else}}
+        {{/each}}
+    </div> 
+</div>
+    
+</div>
